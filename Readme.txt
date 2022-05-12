@@ -1,1 +1,1 @@
-Посилання на github pages: https://anikotyk.github.io/Web/
+РџРѕСЃРёР»Р°РЅРЅСЏ РЅР° github pages: https://anikotyk.github.io/Web/
