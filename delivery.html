@@ -7,7 +7,30 @@
     <link href="Styles/circlesStyles.css" rel="stylesheet" type="text/css">
     <link href="Styles/styleDelivery.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body onload="nextImage()">
+    <script >
+      let sliderImages=["https://images6.alphacoders.com/110/thumb-1920-1104459.jpg", "https://wallpaperaccess.com/full/1230653.jpg", "https://www.campfiresandconcierges.com/wp-content/uploads/2017/05/donut-cover.jpg"];
+      let index = 0;
+      function nextImage(){
+        if(index>=sliderImages.length-1){
+          index=0;
+        }else{
+          index+=1;
+        }
+
+        document.getElementById("slider").style.backgroundImage = "url('"+sliderImages[index]+"')";
+      }
+
+      function prevImage(){
+        if(index<=0){
+          index=sliderImages.length-1;
+        }else{
+          index-=1;
+        }
+
+        document.getElementById("slider").style.backgroundImage = "url('"+sliderImages[index]+"')";
+      }
+    </script>
     <header>
       <!--  Пункт 2: Шапка, меню и подвал сайта должны тянуться на всю ширину сайта. При этом содержимое шапки, меню и подвала должно помещаться в область шириной в 980px + отступы по 10px с каждой стороны. При уменьшении или увеличении ширины окна браузера верстка не должна ехать. -->
       <!-- Клас divContent обмежує ширину контенту блоків header footer і menu та центрує його -->
@@ -41,18 +64,13 @@
       </div>
     </div>
     <div class="slider">
+
       <!-- Пункт 3: Слайдер должен тянуться на всю ширину экрана, при этом изображение внутри блока должно быть по центру. Изображение должны скрываться, если его ширина больше окна браузера (не должно растягивать верстку) и должно быть по центру, если его ширина меньше окна браузера. -->
-      <!-- Клас circlesParent обмежує ширину контенту блоку slider та центрує його -->
-      <div class="circlesParent">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
-        <div class="circle5"></div>
-        <div class="circle6"></div>
-        <div class="circle7"></div>
-        <div class="circle8"></div>
-        <div class="circle9"></div>
+      <!-- Клас sliderContent обмежує ширину контенту блоку slider та центрує його -->
+
+      <div class="sliderContent" id="slider">
+        <button type="button" class="prev" onclick="prevImage()">&#10094;</button>
+        <button type="button" class="next" onclick="nextImage()">&#10095;</button>
       </div>
     </div>
     <div class="content">
